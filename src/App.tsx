@@ -1,27 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/cat.png'
-import './App.css'
+import { Container} from '@mui/material';
+import HeaderSection from './pages/Header';
+import HeroSection from './pages/HeroSection';
+import WhyStartSection from './pages/WhyStart';
+import WhereBeforeUni from './pages/WhereBeforeUni';
+import IAlreadyKnowSection from './pages/IAlreadyKnowSection';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <h1>Es sēžu ļoti normāli, neko nezinu :)</h1>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+    <Container 
+      maxWidth={false}
+      disableGutters
+      sx={{
+        height: '100vh',
+        width: '100vw',
+      }}>
+      
+        <HeaderSection />
+        <HeroSection />
+        <WhyStartSection />
+        <WhereBeforeUni />
+        <IAlreadyKnowSection />
 
-      <h1>Mjau</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Mjau count is {count}
-        </button>
-      </div>
-    </>
-  )
+    </Container>
+  );
 }
 
 export default App
