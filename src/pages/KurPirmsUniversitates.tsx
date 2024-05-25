@@ -1,20 +1,15 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import programmerIllustration from "../assets/sitting_at_computer.svg";
+import CustomTwoColGrid, {Image, Text} from "../components/GridContainer";
 
-const WhereBeforeUni = () => {
+const KurPirmsUniSection = () => {
   return (
-    <Container 
-      maxWidth={false} 
-      sx={{
-        backgroundColor: "primary.main",
-        padding: "4rem"
-      }}
-    >
-      <Grid container p={8} spacing={7} alignItems="center">
-        <Grid item xs={7}>
+    <CustomTwoColGrid
+      firstCol={
+        <Text>
           <Typography variant="h2">
             Kur pirms universitātes?
-            </Typography>
+          </Typography>
 
           <Typography variant="h3" mt={2}>
             Vidusskolā sāku doties uz programmēšanas pulciņu.
@@ -31,21 +26,19 @@ const WhereBeforeUni = () => {
             </Box>
             taču priekšzināšanas nav obligātas, ja vēlies iestāties universitātē.
           </Typography>
-        </Grid>
-        
-        <Grid item xs={5}>
-          <Box
-            component="img"
-            sx={{
-              width: '100%',
-            }}
-            alt="Illustration of boy programming"
-            src={programmerIllustration}
-          />
-        </Grid>
-      </Grid>
-    </Container>
+        </Text>
+      }
+      secondCol={
+        <Image 
+          src={programmerIllustration} 
+          alt="Jaunietis sēž pie datora un programmē"
+        />
+      }
+
+      desktopWidthFirstCol={7}
+      mobileReverse
+    />
   );
 };
 
-export default WhereBeforeUni;
+export default KurPirmsUniSection;

@@ -1,28 +1,18 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import computerIllustration1 from "../assets/computer_light_bulb.svg";
+import CustomTwoColGrid, {Image, Text} from "../components/GridContainer";
 
-const WhyStartSection = () => {
+const KapecSaktProgSection = () => {
   return (
-    <Container 
-      maxWidth={false} 
-      sx={{
-        backgroundColor: "secondary.main",
-        padding: "4rem"
-      }}
-    >
-      <Grid container p={8} spacing={7} alignItems="center">
-        <Grid item xs={5}>
-          <Box
-            component="img"
-            sx={{
-              width: '100%',
-            }}
-            alt="Illustration of computer and programming"
-            src={computerIllustration1}
-          />
-        </Grid>
-
-        <Grid item xs={7}>
+    <CustomTwoColGrid 
+      firstCol={
+        <Image 
+          src={computerIllustration1} 
+          alt="Programmēšana var būt interesanta nodarbošanās" 
+        />
+      } 
+      secondCol={
+        <Text>
           <Typography variant="h2">
             Kāpēc sākt programmēt?
           </Typography>
@@ -42,10 +32,12 @@ const WhyStartSection = () => {
             </Box>
             nekad nav par vēlu!
           </Typography>
-        </Grid>
-      </Grid>
-    </Container>
+        </Text>
+      }
+      desktopWidthFirstCol={5}
+      colorScheme='secondary'
+    />
   );
 };
 
-export default WhyStartSection;
+export default KapecSaktProgSection;

@@ -8,11 +8,11 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
-      light: '#DDE4FF',
+      light: '#e7ecff', //#e7ecff //original: DDE4FF
       dark: '#1D3AA0',
     },
     secondary: {
-      main: '#DDE4FF',
+      main: '#e7ecff',
       dark: '#1D3AA0'
     },
   },
@@ -27,20 +27,20 @@ const theme = createTheme({
       color: '#000000',
     },
     h3: {
-      fontFamily: 'Lalezar',
-      color: '#000000',
+      fontFamily: 'Inter',
+      color: '#5B5B5B',
     },
     h4: {
-      fontFamily: 'Lalezar',
-      color: '#000000',
+      fontFamily: 'Inter',
+      color: '#5B5B5B',
     },
     h5: {
-      fontFamily: 'Lalezar',
-      color: '#000000',
+      fontFamily: 'Inter',
+      color: '#5B5B5B',
     },
     h6: {
-      fontFamily: 'Lalezar',
-      color: '#000000',
+      fontFamily: 'Inter',
+      color: '#5B5B5B',
     },
     
     button: {

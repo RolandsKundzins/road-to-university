@@ -4,7 +4,7 @@ const HeaderSection = () => {
   return (
     <AppBar position="static" sx={{padding: "15px", backgroundColor: "primary.light"}}>
       <Toolbar>
-        <Typography variant="h3" sx={{flexGrow: 1}}>Rolands Kundziņš</Typography>
+        <Typography variant="h2" sx={{flexGrow: 1}}>Rolands Kundziņš</Typography>
         <Button variant='contained' size='large' sx={{
           backgroundColor: 'primary.dark',
           color: 'primary.main',
