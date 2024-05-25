@@ -43,15 +43,16 @@ const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({ firstCol, secondCol, des
       disableGutters
       sx={{
         backgroundColor: `${colorScheme}.main`,
-        padding: "150px 70px"
+        padding: "150px 70px",
+        display: 'flex'
       }}
     >
       <Grid container spacing={8} alignItems="center">
-        <Grid item xs={12} md={desktopWidthFirstCol} order={{ xs: mobileReverse ? 2 : 1, md: 1 }}>
+        <Grid item xs={12} lg={desktopWidthFirstCol} order={{ xs: mobileReverse ? 2 : 1, md: 1 }}>
           {firstCol}
         </Grid>
 
-        <Grid item xs={12} md={12 - desktopWidthFirstCol} order={{ xs: mobileReverse ? 1 : 2, md: 2 }}>
+        <Grid item xs={12} lg={12 - desktopWidthFirstCol} order={{ xs: mobileReverse ? 1 : 2, md: 2 }} sx={{flex: 1, height: '100%'}}>
           {secondCol}
         </Grid>
       </Grid>

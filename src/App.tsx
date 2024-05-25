@@ -9,6 +9,7 @@ import KoTurMacaSection from './pages/KoTurMaca';
 import CikIlgiJastudeSection from './pages/CikIlgiJastude';
 import KaVeicasSection from './pages/KaVeicas';
 import ParManiSection from './pages/ParMani';
+import SazinatiesSection from './pages/Sazinaties';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <CikIlgiJastudeSection />
       <KaVeicasSection />
       <ParManiSection />
+      <SazinatiesSection />
     </Container>
   );
 }

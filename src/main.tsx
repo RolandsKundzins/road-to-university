@@ -25,10 +25,12 @@ const theme = createTheme({
     h2: {
       fontFamily: 'Lalezar',
       color: '#000000',
+      fontSize: '65px',
     },
     h3: {
       fontFamily: 'Inter',
       color: '#5B5B5B',
+      fontSize: '47px',
     },
     h4: {
       fontFamily: 'Inter',
