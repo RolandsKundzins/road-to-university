@@ -36,7 +36,9 @@ export const Image: React.FC<ImageProps> = ({ src, alt }) => {
 };
 
 
-const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({ firstCol, secondCol, desktopWidthFirstCol, mobileReverse = false, colorScheme = "primary" }) => {
+const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({ 
+  firstCol, secondCol, desktopWidthFirstCol, mobileReverse = false, colorScheme = "primary"
+}) => {
   return (
     <Container
       maxWidth={false}
@@ -47,15 +49,15 @@ const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({ firstCol, secondCol, des
         display: 'flex',
       }}
     >
-      <Grid container spacing={8} alignItems="center" sx={{
+      <Grid container alignItems="center" sx={{
           maxWidth: "2000px",
           margin: '0 auto',
       }}>
-        <Grid item xs={12} lg={desktopWidthFirstCol} order={{ xs: mobileReverse ? 2 : 1, md: 1 }}>
+        <Grid item xs={12} pt={{xs: 4}} pr={{lg: 8}} lg={desktopWidthFirstCol} order={{ xs: mobileReverse ? 2 : 1, md: 1 }} height={{ xs: 'auto', lg: '100%' }} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
           {firstCol}
         </Grid>
 
-        <Grid item xs={12} lg={12 - desktopWidthFirstCol} order={{ xs: mobileReverse ? 1 : 2, md: 2 }} sx={{flex: 1, height: '100%'}}>
+        <Grid item xs={12} pt={{xs: 4}} lg={12 - desktopWidthFirstCol} order={{ xs: mobileReverse ? 1 : 2, md: 2 }} height={{ xs: 'auto', lg: '100%' }} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
           {secondCol}
         </Grid>
       </Grid>

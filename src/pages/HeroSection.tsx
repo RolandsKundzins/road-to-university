@@ -1,31 +1,89 @@
-import { Box, Container } from "@mui/material";
-import tempMain from '../assets/temp_main.png';
+import { Container, Grid, Typography, Box } from "@mui/material";
+import busIllustration from "../assets/bus_illustration.svg";
+import arrowIllustration from "../assets/arrow_hero_dekstop.svg";
+// import busSmoke from "../assets/bus_smoke_numbers.svg";
+import { useState } from "react";
 
-function HeroSection() {
+interface HeroSection {
+  scrollToSection: (sectionRef: React.RefObject<HTMLDivElement>) => void;
+  SecondSectionRef: React.RefObject<HTMLDivElement>;
+}
+
+const HeroSection: React.FC<HeroSection>  = ({ scrollToSection, SecondSectionRef }) => {
+  const [isMoving, setIsMoving] = useState(false);
+
+  const startBusSmoke = () => {
+    setIsMoving(true);
+    setTimeout(() => {
+      setTimeout(() => {
+        setIsMoving(false);
+      }, 1000);
+      
+      scrollToSection(SecondSectionRef);
+    }, 800);
+  }
+
   return (
-    <Container 
-      maxWidth={false} 
+    <Container
+      maxWidth={false}
       disableGutters
+      sx={{
+        backgroundColor: `primary.main`,
+        marginTop: '100px'
+      }}
     >
-    {/* Hero section */}
+      <Grid container alignItems="center" justifyContent="space-between" sx={{
+      }}>
+        <Grid item xs={12} lg={6} mt={10} p={5}>
+          <Typography variant="h1" fontSize="70px">
+            Vēlies kļūt par programmētāju?
+          </Typography>
 
+          <Typography variant="h1" color="primary.dark" fontSize="120px">
+            Nāc ar mani!
+          </Typography>
+        </Grid>
 
-        {/* <Box>
-          <Typography variant='h3'>Vēlies kļūt par programmētāju?</Typography>
-          <Typography variant='h2' color='secondary'>Nāc ar mani!</Typography>
-        </Box> */}
-        
-        {/* TODO: Fix fake design */}
-        <Box
-          component="img"
-          sx={{
-            width: '100%',
-          }}
-          alt="The house from the offer."
-          src={tempMain}
-        />
+        <Grid item xs={12} lg={6} sx={{display: 'flex', justifyContent: 'flex-end'}}>
+          {/* The bus */}
+          <Box
+            component="img"
+            width={{ xs: '80%', lg: '100%' }}
+            sx={{
+              maxWidth: '800px',
+              transition: 'transform 2s',
+              transform: isMoving ? 'translateX(100%)' : 'none',
 
-        {/* TODO: Add button to next section */}
+              ":hover":{
+                cursor: "pointer"
+              }
+            }}
+            alt="Autobusa ilustrācija"
+            src={busIllustration}
+            onClick={() => startBusSmoke()}
+          />
+        </Grid>
+
+        <Grid item xs={12} mb={6} sx={{textAlign: 'center', position: 'relative'}}>
+          <Typography variant="h2" fontSize="57px" sx={{position: 'absolute', transform: 'translateX(-50%)', left: '50%', top: '30%'}}>
+            Uzklikšķini!
+          </Typography>
+            <Box
+              component="img"
+              width={{ xs: '85%', lg: '100%' }}
+              sx={{
+                maxWidth: '700px',
+
+                ":hover":{
+                  cursor: "pointer"
+                }
+              }}
+              alt="Bulta, kas norāda uz autobusu" 
+              src={arrowIllustration}
+              onClick={() => startBusSmoke()}
+            />
+        </Grid>
+      </Grid>
     </Container>
   )
 }

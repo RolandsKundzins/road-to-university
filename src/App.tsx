@@ -14,6 +14,7 @@ import { useRef } from 'react';
 
 function App() {
   const contactRef = useRef<HTMLDivElement>(null);
+  const kapecSaktProgRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
     if (sectionRef.current) {
@@ -34,9 +35,9 @@ function App() {
 
       
       <HeaderSection scrollToSection={scrollToSection} contactRef={contactRef} />
-      <HeroSection />
+      <HeroSection scrollToSection={scrollToSection} SecondSectionRef={kapecSaktProgRef} />
 
-      <KapecSaktProgSection />
+      <KapecSaktProgSection ref={kapecSaktProgRef}/>
       <KurPirmsUniSection />
       <EsJauMakuKodetSection />
       <KurStudetSection />

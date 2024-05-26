@@ -7,7 +7,7 @@ interface HeaderSectionProps {
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({ scrollToSection, contactRef }) => {
   return (
-    <AppBar position="static" sx={{padding: "15px", backgroundColor: "primary.light"}}>
+    <AppBar position="fixed" sx={{padding: "15px", backgroundColor: "primary.light"}}>
       <Toolbar>
         <Typography variant="h2" sx={{flexGrow: 1}}>Rolands Kundziņš</Typography>
         <Button variant='contained' size='large' sx={{
