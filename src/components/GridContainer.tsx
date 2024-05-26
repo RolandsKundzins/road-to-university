@@ -38,16 +38,19 @@ export const Image: React.FC<ImageProps> = ({ src, alt }) => {
 
 const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({ firstCol, secondCol, desktopWidthFirstCol, mobileReverse = false, colorScheme = "primary" }) => {
   return (
-    <Container 
+    <Container
       maxWidth={false}
       disableGutters
       sx={{
         backgroundColor: `${colorScheme}.main`,
         padding: "150px 70px",
-        display: 'flex'
+        display: 'flex',
       }}
     >
-      <Grid container spacing={8} alignItems="center">
+      <Grid container spacing={8} alignItems="center" sx={{
+          maxWidth: "2000px",
+          margin: '0 auto',
+      }}>
         <Grid item xs={12} lg={desktopWidthFirstCol} order={{ xs: mobileReverse ? 2 : 1, md: 1 }}>
           {firstCol}
         </Grid>

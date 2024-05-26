@@ -1,6 +1,11 @@
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 
-const HeaderSection = () => {
+interface HeaderSectionProps {
+  scrollToSection: (sectionRef: React.RefObject<HTMLDivElement>) => void;
+  contactRef: React.RefObject<HTMLDivElement>;
+}
+
+const HeaderSection: React.FC<HeaderSectionProps> = ({ scrollToSection, contactRef }) => {
   return (
     <AppBar position="static" sx={{padding: "15px", backgroundColor: "primary.light"}}>
       <Toolbar>
@@ -10,7 +15,9 @@ const HeaderSection = () => {
           color: 'primary.main',
           borderRadius: '100px', 
           fontSize: '2rem',
-        }}>
+        }}
+          onClick={() => scrollToSection(contactRef)}
+        >
           Sazināties
         </Button>
       </Toolbar>

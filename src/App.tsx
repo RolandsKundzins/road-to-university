@@ -10,8 +10,17 @@ import CikIlgiJastudeSection from './pages/CikIlgiJastude';
 import KaVeicasSection from './pages/KaVeicas';
 import ParManiSection from './pages/ParMani';
 import SazinatiesSection from './pages/Sazinaties';
+import { useRef } from 'react';
 
 function App() {
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Container 
       maxWidth={false}
@@ -21,9 +30,10 @@ function App() {
         width: '100vw',
       }}>
 
+      {/* TODO: DARK MODE */}
 
       
-      <HeaderSection />
+      <HeaderSection scrollToSection={scrollToSection} contactRef={contactRef} />
       <HeroSection />
 
       <KapecSaktProgSection />
@@ -34,7 +44,8 @@ function App() {
       <CikIlgiJastudeSection />
       <KaVeicasSection />
       <ParManiSection />
-      <SazinatiesSection />
+
+      <SazinatiesSection ref={contactRef} />
     </Container>
   );
 }
