@@ -1,7 +1,18 @@
 import { createTheme } from "@mui/material";
 
+const breakpoints = { //currently set to default
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 900,
+    lg: 1200,
+    xl: 1536
+  }
+};
+
 
 export const lightTheme = createTheme({
+  breakpoints,
   palette: {
     mode: 'light',
     primary: {
@@ -15,9 +26,27 @@ export const lightTheme = createTheme({
     },
   },
   typography: {
-    h1: { fontFamily: 'Lalezar', color: '#000000' },
-    h2: { fontFamily: 'Lalezar', color: '#000000', fontSize: '65px' },
-    h3: { fontFamily: 'Inter', color: '#5B5B5B', fontSize: '47px' },
+    h1: {
+      fontFamily: 'Lalezar', color: '#000000', fontSize: '70px',
+
+      [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+        fontSize: '11vw'
+      }
+    },
+    h2: { 
+      fontFamily: 'Lalezar', color: '#000000', fontSize: '65px',
+
+      [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+        fontSize: '12vw'
+      }
+    },
+    h3: { 
+      fontFamily: 'Inter', color: '#5B5B5B', fontSize: '47px',
+
+      [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+        fontSize: '7vw'
+      } 
+    },
     h4: { fontFamily: 'Inter', color: '#5B5B5B' },
     h5: { fontFamily: 'Inter', color: '#5B5B5B' },
     h6: { fontFamily: 'Inter', color: '#5B5B5B' },
@@ -39,12 +68,30 @@ export const darkTheme = createTheme({
     },
   },
   typography: {
-    h1: { fontFamily: 'Lalezar', color: '#FFFFFF' },
-    h2: { fontFamily: 'Lalezar', color: '#FFFFFF', fontSize: '65px' },
-    h3: { fontFamily: 'Inter', color: '#F0F0F0', fontSize: '47px' },
+    h1: { 
+      fontFamily: 'Lalezar', color: '#FFFFFF', fontSize: '70px',
+
+      [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+        fontSize: '11vw'
+      }
+    },
+    h2: { 
+      fontFamily: 'Lalezar', color: '#FFFFFF', fontSize: '65px',
+
+      [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+        fontSize: '12vw'
+      }
+    },
+    h3: { 
+      fontFamily: 'Inter', color: '#F0F0F0', fontSize: '47px',
+
+      [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
+        fontSize: '7vw'
+      } 
+    },
     h4: { fontFamily: 'Inter', color: '#F0F0F0' },
     h5: { fontFamily: 'Inter', color: '#F0F0F0' },
     h6: { fontFamily: 'Inter', color: '#F0F0F0' },
-    button: { fontFamily: 'Lalezar' },
+    button: { fontFamily: 'Lalezar'},
   },
 });

@@ -28,12 +28,12 @@ const HeroSection: React.FC<HeroSection>  = ({ scrollToSection, SecondSectionRef
       disableGutters
       sx={{
         backgroundColor: `primary.main`,
-        marginTop: '100px'
+        marginTop: '7vw'
       }}
     >
       <Grid container alignItems="center" justifyContent="space-between" sx={{
       }}>
-        <Grid item xs={12} lg={6} mt={10} p={5}>
+        <Grid item xs={12} lg={6} mt={10} p={{xs: '7%', lg: 5}}>
           <Typography variant="h1" fontSize="70px">
             Vēlies kļūt par programmētāju?
           </Typography>
@@ -64,9 +64,9 @@ const HeroSection: React.FC<HeroSection>  = ({ scrollToSection, SecondSectionRef
 
         <Grid item xs={12} mb={6} sx={{textAlign: 'center', position: 'relative'}}>
           <Typography 
-            variant="h2" 
-            fontSize="57px" 
-            sx={{position: 'absolute', transform: 'translateX(-50%)', left: '50%', top: '30%'}}
+            variant="h2"
+            fontSize={{xs: '9vw', lg: '65px'}}
+            sx={{position: 'absolute', transform: 'translateX(-45%)', left: '45%', top: '30%'}}
           >
             Uzklikšķini!
           </Typography>

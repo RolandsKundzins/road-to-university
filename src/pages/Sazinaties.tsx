@@ -6,7 +6,9 @@ import React from "react";
 const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
   const boxBorderRadius = '20px';
   const boxBackgroundColor = 'primary.main';
-  const boxPadding = '30px 50px 30px 40px';
+  const boxPadding = {xs: '5vw 5vw', md: '30px 50px 30px 40px'};
+
+  const bulletListSize = {xs: '7vw', md: '30px'};
 
   return (
     <div ref={ref}>
@@ -23,7 +25,9 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
               <List>
                 <ListItem>
                   <ListItemIcon>
-                      <FiberManualRecordIcon fontSize="large" sx={{color: "#DFBF43"}}/>
+                      <FiberManualRecordIcon sx={{
+                        color: "#DFBF43", fontSize: bulletListSize
+                      }}/>
                     </ListItemIcon>
                   <ListItemText>
                     <Typography variant="h3" sx={{fontFamily: 'Lalezar'}}>
@@ -37,7 +41,9 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
                 
                 <ListItem>
                   <ListItemIcon>
-                      <FiberManualRecordIcon fontSize="large" sx={{color: "#1D3AA0"}}/>
+                      <FiberManualRecordIcon sx={{
+                        color: "#1D3AA0", fontSize: bulletListSize
+                      }}/>
                     </ListItemIcon>
                   <ListItemText>
                     <Typography variant="h3" sx={{fontFamily: 'Lalezar'}}>
@@ -51,7 +57,9 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
 
                 <ListItem>
                   <ListItemIcon>
-                      <FiberManualRecordIcon fontSize="large" color="info"/>
+                      <FiberManualRecordIcon color="info" sx={{
+                        fontSize: bulletListSize
+                      }}/>
                     </ListItemIcon>
                   <ListItemText>
                     <Typography variant="h3" sx={{fontFamily: 'Lalezar'}}>

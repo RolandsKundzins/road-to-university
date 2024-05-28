@@ -8,24 +8,43 @@ interface HeaderSectionProps {
 }
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({ changeLightMode, isDarkMode, scrollToSection, contactRef }) => {
+  const fontSizeButton = {xs: '4vw', md: '2rem'};
+  const paddingButton = {xs: '1.5vw', md: '15px'};
+
   return (
-    <AppBar position="fixed" sx={{padding: "15px", backgroundColor: "primary.light"}}>
-      <Toolbar sx={{display: 'flex', flexWrap: 'wrap'}}>
-        <Typography variant="h2" sx={{flexGrow: 1}}>
+    <AppBar position="fixed" sx={{padding: {xs: '15px 2.5vw', lg: '15px'}, backgroundColor: "primary.light"}}>
+      <Toolbar sx={{display: 'flex', flexWrap: 'wrap', padding: 0}}>
+        {/* For desktop show full */}
+        <Typography 
+          variant="h1" 
+          display={{ xs: 'none', lg: 'block' }}
+          sx={{flexGrow: 1}}
+        > 
           Rolands Kundziņš
+        </Typography>
+        
+        {/* For mobile show shortened */}
+        <Typography 
+          variant="h1"
+          fontSize={{xs: '9vw'}}
+          display={{ xs: 'block', lg: 'none' }}
+          
+          sx={{flexGrow: 1}}
+        > 
+          Kundziņš
         </Typography>
 
         <Button 
           variant='contained' 
-          size='large' 
+          size='large'
           sx={{
             backgroundColor: 'primary.main',
             color: 'primary.dark',
             borderRadius: '100px', 
-            fontSize: '2rem',
-            minWidth: '230px',
+            fontSize: fontSizeButton,
             marginLeft: '10px',
-
+            padding: paddingButton,
+            
             ":hover": {
               color: 'primary.light'
             }
@@ -37,14 +56,14 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ changeLightMode, isDarkMo
 
         <Button 
           variant='contained' 
-          size='large' 
+          size='large'
           sx={{
             backgroundColor: 'primary.dark',
             color: 'primary.main',
             borderRadius: '100px', 
-            fontSize: '2rem',
-            marginLeft: '20px',
-            minWidth: '200px',
+            fontSize: fontSizeButton,
+            marginLeft: {xs: '2vw', md:'20px'},
+            padding: paddingButton,
 
             ":hover":{
               backgroundColor: 'primary.main',

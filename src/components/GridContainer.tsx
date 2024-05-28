@@ -45,7 +45,10 @@ const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({
       disableGutters
       sx={{
         backgroundColor: `${colorScheme}.main`,
-        padding: "150px 70px",
+        padding: {
+          xs: '15vw 5vw',
+          lg: '150px 70px'
+        }, //check this
         display: 'flex',
       }}
     >

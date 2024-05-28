@@ -12,7 +12,7 @@ import KaVeicasSection from './pages/KaVeicas';
 import ParManiSection from './pages/ParMani';
 import SazinatiesSection from './pages/Sazinaties';
 import { useRef, useState } from 'react';
-import { darkTheme, lightTheme } from './theme';
+import { lightTheme, darkTheme} from './theme';
 
 
 const App = () => {
