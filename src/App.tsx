@@ -1,4 +1,5 @@
-import { Container} from '@mui/material';
+import React from 'react';
+import { Container, CssBaseline, ThemeProvider} from '@mui/material';
 import HeaderSection from './pages/Header';
 import HeroSection from './pages/HeroSection';
 import KapecSaktProgSection from './pages/KapecSaktProgrammet';
@@ -10,9 +11,13 @@ import CikIlgiJastudeSection from './pages/CikIlgiJastude';
 import KaVeicasSection from './pages/KaVeicas';
 import ParManiSection from './pages/ParMani';
 import SazinatiesSection from './pages/Sazinaties';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { darkTheme, lightTheme } from './theme';
 
-function App() {
+
+const App = () => {
+  const [isDarkmode, setIsDarkMode] = useState<boolean>(false);
+
   const contactRef = useRef<HTMLDivElement>(null);
   const kapecSaktProgRef = useRef<HTMLDivElement>(null);
 
@@ -22,32 +27,31 @@ function App() {
     }
   };
 
+  const changeLightMode = () => {
+    console.log("dark_mode:" + isDarkmode)
+    setIsDarkMode(!isDarkmode);
+  }
+
   return (
-    <Container 
-      maxWidth={false}
-      disableGutters
-      sx={{
-        height: '100vh',
-        width: '100vw',
-      }}>
+    <ThemeProvider theme={isDarkmode ? darkTheme : lightTheme}>
+      <CssBaseline />
+      <Container  maxWidth={false} disableGutters>
 
-      {/* TODO: DARK MODE */}
+        <HeaderSection changeLightMode={changeLightMode} isDarkMode={isDarkmode} scrollToSection={scrollToSection} contactRef={contactRef} />
+        <HeroSection scrollToSection={scrollToSection} SecondSectionRef={kapecSaktProgRef} />
 
-      
-      <HeaderSection scrollToSection={scrollToSection} contactRef={contactRef} />
-      <HeroSection scrollToSection={scrollToSection} SecondSectionRef={kapecSaktProgRef} />
+        <KapecSaktProgSection ref={kapecSaktProgRef}/>
+        <KurPirmsUniSection />
+        <EsJauMakuKodetSection />
+        <KurStudetSection />
+        <KoTurMacaSection />
+        <CikIlgiJastudeSection />
+        <KaVeicasSection />
+        <ParManiSection />
 
-      <KapecSaktProgSection ref={kapecSaktProgRef}/>
-      <KurPirmsUniSection />
-      <EsJauMakuKodetSection />
-      <KurStudetSection />
-      <KoTurMacaSection />
-      <CikIlgiJastudeSection />
-      <KaVeicasSection />
-      <ParManiSection />
-
-      <SazinatiesSection ref={contactRef} />
-    </Container>
+        <SazinatiesSection ref={contactRef} />
+      </Container>
+    </ThemeProvider>
   );
 }
 

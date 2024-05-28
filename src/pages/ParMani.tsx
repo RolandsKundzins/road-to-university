@@ -8,7 +8,7 @@ const ParManiSection = () => {
       firstCol={
         <Image 
           src={portraitImg} 
-          alt="Ilustrācija par skrienošu laiku"
+          alt="Es, Rolands Kundziņš, skaisti saģērbies uzvalkā, ar skaistu dzeltenīgu fonu"
         />
       }
       secondCol={

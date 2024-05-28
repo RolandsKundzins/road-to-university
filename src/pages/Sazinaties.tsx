@@ -5,7 +5,7 @@ import React from "react";
 
 const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
   const boxBorderRadius = '20px';
-  const boxBackgroundColor = 'white';
+  const boxBackgroundColor = 'primary.main';
   const boxPadding = '30px 50px 30px 40px';
 
   return (
@@ -13,13 +13,13 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
       <CustomTwoColGrid
         firstCol={
           <>
-            <Box sx={{ borderRadius: boxBorderRadius, backgroundColor: boxBackgroundColor, padding: boxPadding}}>
+            <Box sx={{ borderRadius: boxBorderRadius, backgroundColor: boxBackgroundColor, padding: boxPadding, width: '100%'}}>
               <Typography variant="h2">
                 Kontakti
               </Typography>
             </Box>
 
-            <Box mt={2} sx={{ borderRadius: boxBorderRadius, backgroundColor: boxBackgroundColor, padding: boxPadding}}>
+            <Box mt={2} sx={{ borderRadius: boxBorderRadius, backgroundColor: boxBackgroundColor, padding: boxPadding, width: '100%'}}>
               <List>
                 <ListItem>
                   <ListItemIcon>
@@ -27,7 +27,7 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
                     </ListItemIcon>
                   <ListItemText>
                     <Typography variant="h3" sx={{fontFamily: 'Lalezar'}}>
-                      <Box component="span" sx={{ color: "black" }}>
+                      <Box component="span" sx={{ color: "primary.dark" }}>
                         Instagram:{" "}
                       </Box>
                       instaKonts
@@ -37,11 +37,11 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
                 
                 <ListItem>
                   <ListItemIcon>
-                      <FiberManualRecordIcon fontSize="large" sx={{color: "primary.dark"}}/>
+                      <FiberManualRecordIcon fontSize="large" sx={{color: "#1D3AA0"}}/>
                     </ListItemIcon>
                   <ListItemText>
                     <Typography variant="h3" sx={{fontFamily: 'Lalezar'}}>
-                      <Box component="span" sx={{ color: "black" }}>
+                      <Box component="span" sx={{ color: "primary.dark" }}>
                         Facebook:{" "}
                       </Box>
                       fbKonts
@@ -55,7 +55,7 @@ const SazinatiesSection = React.forwardRef<HTMLDivElement>((_, ref) => {
                     </ListItemIcon>
                   <ListItemText>
                     <Typography variant="h3" sx={{fontFamily: 'Lalezar'}}>
-                      <Box component="span" sx={{ color: "black" }}>
+                      <Box component="span" sx={{ color: "primary.dark" }}>
                         Email:{" "}
                       </Box>
                       email@email.com

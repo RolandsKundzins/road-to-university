@@ -12,16 +12,15 @@ interface HeroSection {
 const HeroSection: React.FC<HeroSection>  = ({ scrollToSection, SecondSectionRef }) => {
   const [isMoving, setIsMoving] = useState(false);
 
-  const startBusSmoke = () => {
+  const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const startBusSmoke = async () => {
     setIsMoving(true);
-    setTimeout(() => {
-      setTimeout(() => {
-        setIsMoving(false);
-      }, 1000);
-      
-      scrollToSection(SecondSectionRef);
-    }, 800);
-  }
+    await delay(800); // Wait for 800ms
+    scrollToSection(SecondSectionRef);
+    await delay(1500); // Wait for another 1000ms
+    setIsMoving(false);
+  };
 
   return (
     <Container
@@ -44,44 +43,48 @@ const HeroSection: React.FC<HeroSection>  = ({ scrollToSection, SecondSectionRef
           </Typography>
         </Grid>
 
-        <Grid item xs={12} lg={6} sx={{display: 'flex', justifyContent: 'flex-end'}}>
-          {/* The bus */}
+        <Grid item xs={12} lg={6} sx={{display: 'flex', justifyContent: 'flex-end', overflow: 'hidden'}}>
           <Box
             component="img"
             width={{ xs: '80%', lg: '100%' }}
             sx={{
               maxWidth: '800px',
-              transition: 'transform 2s',
+              transition: 'transform 2300ms',
               transform: isMoving ? 'translateX(100%)' : 'none',
 
               ":hover":{
                 cursor: "pointer"
               }
             }}
-            alt="Autobusa ilustrācija"
+            alt="Autobusa ilustrācija, kura pārvietojas noklikšķinot"
             src={busIllustration}
             onClick={() => startBusSmoke()}
           />
         </Grid>
 
         <Grid item xs={12} mb={6} sx={{textAlign: 'center', position: 'relative'}}>
-          <Typography variant="h2" fontSize="57px" sx={{position: 'absolute', transform: 'translateX(-50%)', left: '50%', top: '30%'}}>
+          <Typography 
+            variant="h2" 
+            fontSize="57px" 
+            sx={{position: 'absolute', transform: 'translateX(-50%)', left: '50%', top: '30%'}}
+          >
             Uzklikšķini!
           </Typography>
-            <Box
-              component="img"
-              width={{ xs: '85%', lg: '100%' }}
-              sx={{
-                maxWidth: '700px',
 
-                ":hover":{
-                  cursor: "pointer"
-                }
-              }}
-              alt="Bulta, kas norāda uz autobusu" 
-              src={arrowIllustration}
-              onClick={() => startBusSmoke()}
-            />
+          <Box
+            component="img"
+            width={{ xs: '85%', lg: '100%' }}
+            sx={{
+              maxWidth: '700px',
+
+              ":hover":{
+                cursor: "pointer"
+              }
+            }}
+            alt="Bulta, kas norāda uz autobusu" 
+            src={arrowIllustration}
+            onClick={() => startBusSmoke()}
+          />
         </Grid>
       </Grid>
     </Container>

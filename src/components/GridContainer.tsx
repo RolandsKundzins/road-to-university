@@ -53,11 +53,26 @@ const CustomTwoColGrid: React.FC<TwoChildrenProps> = ({
           maxWidth: "2000px",
           margin: '0 auto',
       }}>
-        <Grid item xs={12} pt={{xs: 4}} pr={{lg: 8}} lg={desktopWidthFirstCol} order={{ xs: mobileReverse ? 2 : 1, md: 1 }} height={{ xs: 'auto', lg: '100%' }} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+        <Grid item 
+          xs={12} 
+          pt={{xs: 4}} 
+          pr={{lg: 8}} 
+          lg={desktopWidthFirstCol} 
+          order={{ xs: mobileReverse ? 2 : 1, lg: 1 }} 
+          height={{ xs: 'auto', lg: '100%' }} 
+          sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}
+        >
           {firstCol}
         </Grid>
 
-        <Grid item xs={12} pt={{xs: 4}} lg={12 - desktopWidthFirstCol} order={{ xs: mobileReverse ? 1 : 2, md: 2 }} height={{ xs: 'auto', lg: '100%' }} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+        <Grid item 
+          xs={12} 
+          pt={{xs: 4}} 
+          lg={12 - desktopWidthFirstCol} 
+          order={{ xs: mobileReverse ? 1 : 2, lg: 2 }} 
+          height={{ xs: 'auto', lg: '100%' }} 
+          sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}
+        >
           {secondCol}
         </Grid>
       </Grid>
