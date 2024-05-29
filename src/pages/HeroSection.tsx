@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSection>  = ({ scrollToSection, SecondSectionRef
       disableGutters
       sx={{
         backgroundColor: `primary.main`,
-        marginTop: '7vw'
+        marginTop: '2vw'
       }}
     >
       <Grid container alignItems="center" justifyContent="space-between" sx={{

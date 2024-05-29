@@ -37,14 +37,14 @@ export const lightTheme = createTheme({
       fontFamily: 'Lalezar', color: '#000000', fontSize: '65px',
 
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '12vw'
+        fontSize: '10vw'
       }
     },
     h3: { 
-      fontFamily: 'Inter', color: '#5B5B5B', fontSize: '47px',
+      fontFamily: 'Inter', color: '#5B5B5B', fontSize: '40px',
 
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '7vw'
+        fontSize: '5vw'
       } 
     },
     h4: { fontFamily: 'Inter', color: '#5B5B5B' },
@@ -83,10 +83,10 @@ export const darkTheme = createTheme({
       }
     },
     h3: { 
-      fontFamily: 'Inter', color: '#F0F0F0', fontSize: '47px',
+      fontFamily: 'Inter', color: '#F0F0F0', fontSize: '40px',
 
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '7vw'
+        fontSize: '5vw'
       } 
     },
     h4: { fontFamily: 'Inter', color: '#F0F0F0' },
