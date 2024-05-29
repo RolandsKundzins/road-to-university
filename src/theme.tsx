@@ -41,15 +41,15 @@ export const lightTheme = createTheme({
       }
     },
     h3: { 
-      fontFamily: 'Inter', color: '#5B5B5B', fontSize: '40px',
+      fontFamily: 'Inter', color: '#4a4a4a', fontSize: '40px',
 
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
         fontSize: '5vw'
       } 
     },
-    h4: { fontFamily: 'Inter', color: '#5B5B5B' },
-    h5: { fontFamily: 'Inter', color: '#5B5B5B' },
-    h6: { fontFamily: 'Inter', color: '#5B5B5B' },
+    h4: { fontFamily: 'Inter', color: '#4a4a4a' },
+    h5: { fontFamily: 'Inter', color: '#4a4a4a' },
+    h6: { fontFamily: 'Inter', color: '#4a4a4a' },
     button: { fontFamily: 'Lalezar' },
   },
 });

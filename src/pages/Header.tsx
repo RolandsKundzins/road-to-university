@@ -9,7 +9,7 @@ interface HeaderSectionProps {
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({ changeLightMode, isDarkMode, scrollToSection, contactRef }) => {
   const fontSizeButton = {xs: '4vw', md: '2rem'};
-  const paddingButton = {xs: '1.5vw', md: '15px'};
+  const paddingButton = {xs: '1.5vw', md: '15px 30px'};
 
   return (
     <AppBar position="fixed" sx={{padding: {xs: '15px 2.5vw', lg: '15px'}, backgroundColor: "primary.light"}}>
@@ -18,7 +18,10 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ changeLightMode, isDarkMo
         <Typography 
           variant="h1" 
           display={{ xs: 'none', lg: 'block' }}
-          sx={{flexGrow: 1}}
+          sx={{
+            flexGrow: 1,
+            wordSpacing: '8px'
+          }}
         > 
           Rolands Kundziņš
         </Typography>
@@ -51,7 +54,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ changeLightMode, isDarkMo
           }}
           onClick={() => changeLightMode()}
         >
-          {isDarkMode ? "Dark mode": "Light mode"}
+          {isDarkMode ? "Tumšais": "Gaišais"}
         </Button>
 
         <Button 
