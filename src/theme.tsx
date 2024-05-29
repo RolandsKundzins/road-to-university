@@ -79,7 +79,7 @@ export const darkTheme = createTheme({
       fontFamily: 'Lalezar', color: '#FFFFFF', fontSize: '65px',
 
       [`@media screen and (max-width: ${breakpoints.values.md}px)`]: {
-        fontSize: '12vw'
+        fontSize: '10vw'
       }
     },
     h3: { 
